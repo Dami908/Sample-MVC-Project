@@ -1,0 +1,44 @@
+﻿@model IQueryable<Book>
+
+@{
+    ViewData["Title"] = "ItemsList";
+}
+@{
+    Layout = "_Layout";
+}
+
+<table>
+    <thead>
+        <tr>
+            <th>BookId</th>
+            <th>ISBN</th>
+            <th>Authors Name</th>
+            <th>Book Title</th>
+            <th>$Price</th>
+            <th>Quantity</th>
+            <th>Reviews</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Book str in Model)
+        {
+        <tr>
+            <td><a asp-action="DisplayPage" asp-route-bookId="@str.bookId">@str.bookId</a></td>
+            <td>@str.ISBN</td>
+            <td>@str.AuthorName</td>
+            <td>@str.BookTitle</td>
+            <td>@str.Amount</td>
+            <td>@str.Quantity</td>
+            <td>@str.Review</td>
+            <td><a asp-action="Delete" asp-route-bookId="@str.bookId">Delete</a></td>
+            <td><a asp-action="EditPage" asp-route-bookId="@str.bookId">Edit</a></td>
+            <td><a asp-action="UserPage" asp-route-bookId="@str.bookId">Add Review</a></td>
+            <td><a asp-action="Cart" asp-route-bookId="@str.bookId">Add to cart</a></td>
+
+
+
+        </tr>
+        }
+    </tbody>
+
+</table>

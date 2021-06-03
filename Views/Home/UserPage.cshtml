@@ -1,0 +1,23 @@
+﻿@model Book
+@{
+    Layout = "_Layout";
+}
+
+
+<form asp-action="AddReviews" method="post">
+    <h3>User Page</h3>
+    <div class="form-group">
+        <input type="hidden" asp-for="ISBN" class="form-control" />
+        <input type="hidden" asp-for="AuthorName" class="form-control" />
+        <input type="hidden" asp-for="BookTitle" class="form-control" />
+        <input type="hidden" asp-for="Amount" class="form-control" />
+        <input type="hidden" asp-for="bookId" class="form-control" />
+        <input type="hidden" asp-for="Quantity" class="form-control" />
+        <label>Add Review: </label><input asp-for="Review" class="form-control" />
+    </div>
+    <div class="text-center">
+        <input class="btn btn-primary" type="submit" value="Complete " />
+    </div>
+</form>
+    
+

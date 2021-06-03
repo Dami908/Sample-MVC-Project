@@ -1,0 +1,37 @@
+﻿    @model IQueryable<CartItem>
+    @{
+        ViewData["Title"] = "DisplayPage";
+    }
+    @{
+        Layout = "_Layout";
+    }
+    <h2>Cart</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Author Name</th>
+                <th>Book Title</th>
+                <th>ISBN</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var str in Model)
+            {
+            <tr>
+                <td class="text-left">@str.bookId</td>
+                <td class="text-left">@str.AuthorName</td>
+                <td class="text-center">@str.ISBN</td>
+                <td class="text-right">@str.Amount.ToString("c")</td>
+                <td class="text-right">
+                    @((str.Quantity * str.Amount).ToString("c"))
+                </td>
+                <td><a asp-action="DeleteCart" asp-route-bookId="@str.cartItemId">Remove from Cart</a></td>
+            </tr>
+            }
+        </tbody>
+        
+
+    </table>
+    

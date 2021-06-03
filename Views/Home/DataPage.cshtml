@@ -1,0 +1,18 @@
+﻿@model IQueryable<Book>
+@{
+    Layout = "_Layout";
+}
+<!Doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Data Page</title>
+</head>
+<body>
+    <h2>Data Page</h2>
+    @foreach (Book str in Model)
+    {
+        <p>@str.AuthorName  is registered into your system</p>
+    }
+</body>
+</html>

@@ -1,0 +1,56 @@
+﻿@model Book
+@{
+    ViewData["Title"] = "DisplayPage";
+}
+@{
+    Layout = "_Layout";
+}
+<h2>Details</h2>
+<table>
+    <thead>
+        <tr>
+            
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td>BookId</td>
+            <td>@Model.bookId</a></td>
+        </tr>
+        <tr>
+            <td>ISBN</td>
+            <td>@Model.ISBN</td>
+        </tr>
+        <tr>
+            <td>>Authors Name</td>
+            <td>@Model.AuthorName</td>
+        </tr>
+        <tr>
+            <td>Book Title</td>
+            <td>@Model.BookTitle</td>
+        </tr>
+        <tr>
+            <td>Amount of books in stock</td>
+            <td>@Model.Amount</td>
+        </tr>
+        <tr>
+            <td>Customer Review</td>
+            <td>@Model.Quantity</td>
+        </tr>
+        <tr>
+            <td>Customer Review</td>
+            <td>@Model.Review</td>
+        </tr>
+
+
+    </tbody>
+
+</table>
+
+
+
+
+

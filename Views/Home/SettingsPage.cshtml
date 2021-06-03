@@ -1,0 +1,27 @@
+﻿@{
+    Layout = "_Layout";
+}
+@{ 
+    ViewData["Title"] = "SettingsPage";
+    switch (ViewBag.Layout)
+    {
+        case "_Layout":
+            Layout = "~/Views/Shared/_Layout_second.cshtml";
+            break;
+        default:
+            Layout = "~/Views/Shared/_Layout.cshtml";
+            break;
+    }
+ }
+<!Doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Settings Page</title>
+</head>
+<body>
+    <h2>Settings Page</h2>
+    <a asp-action="Change1">Change to first style</a>
+    <a asp-action="Change2">Change to Second style</a>
+</body>
+</html>
